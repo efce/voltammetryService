@@ -1,4 +1,4 @@
-# Voltammetry Servis, 
+# Voltammetry Service 
 Is a web service for uploading, processing and managing
 voltammetric experiments. It is disigned for native use 
 of EAPro and EAQt voltammograms, however it allows also
