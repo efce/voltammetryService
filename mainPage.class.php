@@ -1,21 +1,23 @@
 <?php
 
+include 'config.php'
 include 'revertdb.class.php';
 include 'sessionManager.class.php';
 include 'DataHandler.class.php';
 
-class mainPage {
+class mainPage { 
 
+	global $dbHost, $dbUser, $dbPass, $dbPrefix, $dbDatabase;
 	protected $client_ip, $uri, $PageName, $dbpages, $PageFull, $PageStruct, $Layout, $Footer, $Modules, $notices, $loginStyle;
 	public $sesMan;
 	public $db;
 	public $dh;
-	public $dbprepend = 'V_';
+	public $dbprepend = $dbPrefix.'_';
 	public $plotDir = './user_plots';
 	private static $thisInstance = null;
 
 	private function __construct() {
-		$this->db=new revertdb('localhost', 'voltamp','v0lt4mp123','voltamp');
+		$this->db=new revertdb($dbHost, $dbUser,$dbPass,$dbDatabase);
 		$this->client_ip = $_SERVER['REMOTE_ADDR'];
 		$this->uri = $_SERVER['REQUEST_URI'];
 		( isset($_GET['name']) ? $this->PageName = $_GET['name'] : $this->PageName = 'index' );
@@ -147,11 +149,11 @@ class mainPage {
 	{
 		$this->loginStyle = '
 @font-face {
-	font-family: verdana;
-	src: url(\'./fonts/verdana.ttf\');
+	font-family: LiberationSans-Regular;
+	src: url(\'./fonts/LiberationSans-Regular.ttf\');
 }
 body, input {
-	font-family: verdana;
+	font-family: LiberationSans-Regular;
 }
 input {
 	font-size: 12px;
