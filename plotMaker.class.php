@@ -123,9 +123,9 @@ class plotMaker {
 		$plot->SetLineStyles($lineStyle);
 		$plot->SetLineWidths(2);
 		$plot->SetPointSizes(0);
-		$plot->SetFontTTF('x_title', 'LiberationSans-Regularb.ttf', 12);
-		$plot->SetFontTTF('y_title', 'LiberationSans-Regularb.ttf', 12);
-		$plot->SetFontTTF('title', 'LiberationSans-Regularb.ttf', 13);
+		$plot->SetFontTTF('x_title', 'LiberationSans-Regular.ttf', 12);
+		$plot->SetFontTTF('y_title', 'LiberationSans-Regular.ttf', 12);
+		$plot->SetFontTTF('title', 'LiberationSans-Regular.ttf', 13);
 		$plot->SetFontTTF('y_label', 'LiberationSans-Regular.ttf', 10);
 		$plot->SetFontTTF('x_label', 'LiberationSans-Regular.ttf', 10);
 		$plot->SetFontTTF('legend', 'LiberationSans-Regular.ttf', 10);
@@ -273,9 +273,9 @@ class plotMaker {
 		$plot->SetLineStyles($lineStyle);
 		$plot->SetLineWidths(2);
 		$plot->SetPointSizes($pointSize);
-		$plot->SetFontTTF('x_title', 'LiberationSans-Regularb.ttf', 12);
-		$plot->SetFontTTF('y_title', 'LiberationSans-Regularb.ttf', 12);
-		$plot->SetFontTTF('title', 'LiberationSans-Regularb.ttf', 13);
+		$plot->SetFontTTF('x_title', 'LiberationSans-Regular.ttf', 12);
+		$plot->SetFontTTF('y_title', 'LiberationSans-Regular.ttf', 12);
+		$plot->SetFontTTF('title', 'LiberationSans-Regular.ttf', 13);
 		$plot->SetFontTTF('y_label', 'LiberationSans-Regular.ttf', 10);
 		$plot->SetFontTTF('x_label', 'LiberationSans-Regular.ttf', 10);
 		$plot->SetFontTTF('legend', 'LiberationSans-Regular.ttf', 10);

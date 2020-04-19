@@ -1,22 +1,23 @@
 <?php
 
-include 'config.php'
+include 'config.php';
 include 'revertdb.class.php';
 include 'sessionManager.class.php';
 include 'DataHandler.class.php';
 
 class mainPage { 
 
-	global $dbHost, $dbUser, $dbPass, $dbPrefix, $dbDatabase;
 	protected $client_ip, $uri, $PageName, $dbpages, $PageFull, $PageStruct, $Layout, $Footer, $Modules, $notices, $loginStyle;
 	public $sesMan;
 	public $db;
 	public $dh;
-	public $dbprepend = $dbPrefix.'_';
+	public $dbprepend;
 	public $plotDir = './user_plots';
 	private static $thisInstance = null;
 
 	private function __construct() {
+		global $dbHost, $dbUser, $dbPass, $dbPrefix, $dbDatabase;
+		$this->dbprepend = $dbPrefix.'_';
 		$this->db=new revertdb($dbHost, $dbUser,$dbPass,$dbDatabase);
 		$this->client_ip = $_SERVER['REMOTE_ADDR'];
 		$this->uri = $_SERVER['REQUEST_URI'];
@@ -272,7 +273,7 @@ p.menitem {
 		}
 
 		if ( $udata[0]['status'] != 'ok' ) {
-			$this->setNotice('Account is not activated or is blocked.', ERROR);
+			$this->setNotice('Account is blocked or not activated.', ERROR);
 			return;
 		}
 		

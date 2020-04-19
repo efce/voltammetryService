@@ -32,10 +32,10 @@ class sessionManager {
 				}
 			}
 			if ( !session_start() )
-				throw new sesException('Unable to start session', 07);
+				throw new Exception('Unable to start session', 7);
 			$ses_id_new=session_id();
 			if ( empty($ses_id_new) )
-				throw new sesException('Start session failed', 08);
+				throw new Exception('Start session failed', 8);
 			$_SESSION['sesManager']['started']=time();
 			$this->attempts=$this->attempts+1;
 		} else {
@@ -48,7 +48,7 @@ class sessionManager {
 					$this->__construct();
 					break;
 				default:
-					throw new sesException('Session critical error...', 09);
+					throw new Exception('Session critical error...', 9);
 				}
 			}
 		}
@@ -103,7 +103,7 @@ class sessionManager {
 			if ( $_SESSION['sesManager']['userid'] == $id )
 				return true;
 			else
-				throw new sesException('Session fatal error while logging in', 11);
+				throw new Exception('Session fatal error while logging in', 11);
 		} else {
 			return false;
 		}
@@ -126,7 +126,7 @@ class sessionManager {
 			if ( $_SESSION['sesManager']['userid'] == $id )
 				return true;
 			else
-				throw new sesException('Session fatal error while logging in', 11);
+				throw new Exception('Session fatal error while logging in', 11);
 		} else {
 			return false;
 		}
